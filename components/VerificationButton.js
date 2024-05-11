@@ -1,7 +1,5 @@
 import {useEffect, useState} from 'react';
 
-import styles from './page.module.css';
-
 import FancyBorder from './FancyBorder';
 
 export default function VerificationButton() {

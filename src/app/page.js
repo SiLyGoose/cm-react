@@ -3,14 +3,12 @@
 import Image from 'next/image';
 import {useState} from 'react';
 
-import styles from './page.module.css';
-
-import VerificationButton from './VerificationButton';
-import PageNavigatorArrow from './PageNavigatorArrow';
-import LoopbackTest from './LoopbackTest';
+import VerificationButton from '../../components/VerificationButton';
+import PageNavigatorArrow from '../../components/PageNavigatorArrow';
+import LoopbackTest from '../../components/LoopbackTest';
 
 export default function Home() {
-	const [currentPage, setCurrentPage] = useState(1);
+	const [currentPage, setCurrentPage] = useState(0);
 
 	const handlePreviousPage = () => {
 		setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
@@ -20,7 +18,7 @@ export default function Home() {
 		setCurrentPage((prevPage) => Math.min(prevPage + 1, pages.length - 1));
 	};
 
-	const pages = [<VerificationButton />, <LoopbackTest />];
+	const pages = [<VerificationButton key={0} />, <LoopbackTest key={1} />];
 
 	return (
 		<div className='fullPageContainer'>
